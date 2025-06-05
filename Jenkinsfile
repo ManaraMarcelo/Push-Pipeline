@@ -29,6 +29,7 @@ pipeline {
                     sh 'kubectl apply -f ./k8s/app-deployment.yaml'
                     sh 'kubectl apply -f ./k8s/app-service.yaml'
                     sh 'echo "Deployment completed with tag: $tag_version"'
+                    sh 'echo "Waiting for the deployment to be ready..."'
                     // teste para subir pipeline pelo push....
                 }
             }
