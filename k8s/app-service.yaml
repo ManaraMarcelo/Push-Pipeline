@@ -1,12 +1,12 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: nova-app-service
+  name: new-app-service
   labels:
-    app: nova-app
+    app: new-app 
 spec:
   selector:
-    app: nova-app
+    app: new-app 
   ports:
     - protocol: TCP
       port: 80 # Porta que o Service expõe

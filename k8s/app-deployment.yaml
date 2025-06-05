@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: newApp-deployment
+  name: new-app-deployment
   labels:
-    app: newApp
+    app: new-app
 spec:
   replicas: 1 # Apenas 1 réplica para começar
   selector:
     matchLabels:
-      app: newApp
+      app: new-app
   template:
     metadata:
       labels:
-        app: newApp
+        app: new-app
     spec:
       containers:
-      - name: newApp-container
-        image: manaramarcelo/newApp:{{tag}} 
+      - name: new-app-container
+        image: manaramarcelo/new-app:{{tag}} 
         ports:
         - containerPort: 8000
