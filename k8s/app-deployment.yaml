@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nova-app-deployment
+  name: newApp-deployment
   labels:
-    app: nova-app
+    app: newApp
 spec:
   replicas: 1 # Apenas 1 réplica para começar
   selector:
     matchLabels:
-      app: nova-app
+      app: newApp
   template:
     metadata:
       labels:
-        app: nova-app
+        app: newApp
     spec:
       containers:
-      - name: nova-app-container
-        image: manaramarcelo/nova-app:{{tag}} # <--- ATENÇÃO: Use seu username do Docker Hub
+      - name: newApp-container
+        image: manaramarcelo/newApp:{{tag}} 
         ports:
         - containerPort: 8000
