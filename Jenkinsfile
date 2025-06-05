@@ -5,7 +5,7 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 script {
-                    dockerapp = docker.build("manaramarcelo/newapp:${env.BUILD_ID}", '-f ./src/Dockerfile ./src')
+                    dockerapp = docker.build("manaramarcelo/new-app:${env.BUILD_ID}", '-f ./src/Dockerfile ./src')
                 }
             }
         }
@@ -13,7 +13,7 @@ pipeline {
             steps {
                 script {
                     docker.withRegistry('https://index.docker.io/v1/', 'dockerhub-credentials') {
-                        dockerapp.push('Latest')
+                        dockerapp.push('latest')
                         dockerapp.push("${env.BUILD_ID}") 
                     }
                 }
