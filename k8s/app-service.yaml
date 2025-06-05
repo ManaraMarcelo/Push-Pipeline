@@ -9,6 +9,6 @@ spec:
     app: new-app 
   ports:
     - protocol: TCP
-      port: 80 # Porta que o Service expõe
+      port: 8081 # Porta que o Service expõe
       targetPort: 8000 # Porta do contêiner para onde o tráfego será direcionado
   type: NodePort # <--- Use NodePort para garantir que funcione em ambientes locais
